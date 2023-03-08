@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Gestión de clientes</title>
+</head>
+<body>
+<h1>Gestión de clientes</h1>
+<table>
+  <tr>
+    <th>Nif</th>
+    <th>Nombre</th>
+    <th>Tlf</th>
+    <th>Domicilio</th>
+    <th>Ciudad</th>
+  </tr>
+  <form th:action="@{/clientes/edit}" method="get">
+    <th:block th:each="cliente : ${clientes}">
+      <tr>
+        <td>
+          <input type="submit" th:value="${cliente.getNif()}" name="nif">
+        </td>
+        <td th:text="${cliente.getNombre()}"></td>
+        <td th:text="${cliente.getTlf()}"></td>
+        <td th:text="${cliente.getDomicilio()}"></td>
+        <td th:text="${cliente.getCiudad()}"></td>
+      </tr>
+    </th:block>
+  </form>
+</table>
+<h3><a href="clientes/new">Alta nuevo cliente</a></h3>
+</body>
+</html>

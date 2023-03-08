@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tienda de deportes</title>
+</head>
+<body>
+<h1>Bienvenido a la tienda de deportes</h1>
+<form th:action="@{/clientes/new/guardar}" th:object="${cliente}" method="post">
+    <fieldset><legend>Registro de un nuevo cliente: </legend>
+        <table>
+            <tr>
+                <td><label>NIF: </label></td>
+                <td><input type="text" th:field="*{nif}" /></td>
+            </tr>
+            <tr>
+                <td><label>Nombre: </label></td>
+                <td><input type="text" th:field="*{nombre}" /></td>
+            </tr>
+            <tr>
+                <td><label>Domicilio: </label></td>
+                <td><input type="text" th:field="*{domicilio}" /></td>
+            </tr>
+            <tr>
+                <td><label>Teléfono: </label></td>
+                <td><input type="text" th:field="*{tlf}" /></td>
+            </tr>
+            <tr>
+                <td><label>Ciudad: </label></td>
+                <td><input type="text" th:field="*{ciudad}" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Guardar nuevo cliente</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
